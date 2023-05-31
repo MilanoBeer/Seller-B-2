@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-import useLogin from './hooks/useLogin';
+import useLogin from '../../hooks/entry/useLogin';
 
 function LoginForm() {
     const { form, onChange, onSubmit } = useLogin();
