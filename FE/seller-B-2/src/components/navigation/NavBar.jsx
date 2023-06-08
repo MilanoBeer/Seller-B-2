@@ -5,15 +5,22 @@ import ManagerNav from '../common/navigation/ManagerNav';
 import ConsultantNav from '../common/navigation/ConsultantNav';
 import DefaultNav from '../common/navigation/DefaultNav';
 
+import styled from 'styled-components';
+
 function NavBar() {
   const { seq, isManager } = useIsManager();
 
   return (
-    <div>
+    <NavBarContainer>
       <DefaultNav  seq={seq} isManager={isManager} /> 
       {isManager ? <ManagerNav seq={seq} isManager={isManager} /> : <ConsultantNav seq={seq} isManager={isManager}/>}
-    </div>
+    </NavBarContainer>
   );
 }
+
+const NavBarContainer = styled.div`
+  display: flex;
+
+`
 
 export default NavBar;
