@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
+import styled from 'styled-components';
 
 function ManagerNav({seq, isManager}) {
     const navigate = useNavigate();
@@ -10,7 +11,7 @@ function ManagerNav({seq, isManager}) {
       };
 
   return (
-    <div className="navbar-right-navigator">
+    <ManagerNavContainer>
     <div className="navi-title" onClick={() => navigate('/manager/noticeList')}>
       공지사항
     </div>
@@ -30,8 +31,15 @@ function ManagerNav({seq, isManager}) {
     <div className="navi-title" onClick={onLogOutBtn}>
       로그아웃
     </div>
-  </div>
+    </ManagerNavContainer>
   )
 }
+
+const ManagerNavContainer = styled.div`
+  display: flex; 
+
+`
+
+
 
 export default ManagerNav;
